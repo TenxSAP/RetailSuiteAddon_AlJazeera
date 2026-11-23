@@ -1,0 +1,722 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{66A264DF-3A1E-4847-BE62-57944594FE7D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Retail.SubMain</StartupObject>
+    <RootNamespace>Retail</RootNamespace>
+    <AssemblyName>Retail</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Retail.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Retail.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>Retail.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>Retail.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Business Objects\Common\2.8\managed\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Business Objects\Common\2.8\managed\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Business Objects\Common\2.8\managed\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Sap.Data.Hana.Core.v2.1, Version=2.11.14.0, Culture=neutral, PublicKeyToken=0326b8ea63db4bc4, processorArchitecture=AMD64">
+      <HintPath>..\packages\SapHana.DotNetCore.Data.Provider.2.11.14\lib\Sap.Data.Hana.Core.v2.1.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="1.StartUp\clsWindowWrapper.vb" />
+    <Compile Include="1.StartUp\MainCls.vb" />
+    <Compile Include="1.StartUp\Module1.vb" />
+    <Compile Include="2.Utilities\Utilities.vb" />
+    <Compile Include="3.DatabaseCreation\DatabaseCreation.vb" />
+    <Compile Include="4.BusinessClasses\01.Setup\clsAddonConfiguration.vb" />
+    <Compile Include="4.BusinessClasses\02.Standard Masters\clsAccounts.vb" />
+    <Compile Include="4.BusinessClasses\02.Standard Masters\clsBarcodeMaster.vb" />
+    <Compile Include="4.BusinessClasses\02.Standard Masters\clsBusinessPartners.vb" />
+    <Compile Include="4.BusinessClasses\02.Standard Masters\clsInventoryTransfer.vb" />
+    <Compile Include="4.BusinessClasses\02.Standard Masters\clsItemMaster.vb" />
+    <Compile Include="4.BusinessClasses\02.Standard Masters\ClsSalesReturn.vb" />
+    <Compile Include="4.BusinessClasses\02.Standard Masters\clsUnitsofMeasure.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\BatchSelection.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\ClsAPCreditMemo.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\ClsARCreditNot.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\ClsARInvoice.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\ClsBatch.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\ClsDelivery.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\clsGoodsIssue.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\clsGoodsReceipt.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\ClsGoodsReturn.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\clsGRPO.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\ClsGRPODRAFT.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\clsIncomingPayment.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\clsInventoryCounting.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\ClsOutgoingPayments.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\clsPurchaseBlanketAgreement.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\ClsSaleReturn.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\clsSalesOrder.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\clsPurchaseOrder.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\clsPurchaseRequest.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\clsPurchaseRequestDetails.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\clsRentalAgreement.vb" />
+    <Compile Include="4.BusinessClasses\02.Standard Masters\clsUser.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\PurchaseInvoice.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\SalesQuotation.vb" />
+    <Compile Include="4.BusinessClasses\03.Standard Transactions\TNX_PurchaseQuotation.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\BarcodeMaterialInward.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\Class1_FILTER.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsApproval.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsApprovalDecision.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsAPPROVALSTAGES.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsAPPROVALTEMP.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\ClsBarcodeFilter.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsBarcodereport.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsBarcodeRequest.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\ClsBranchMaster.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\ClsBrandMaster.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsBulkPOProcessingWizard.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsBuyAndGetLeastItem.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsBuyNGetOneFreeItem.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsCategorySplit.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsCentralizedPriceChangeRequest.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsClearanceSales.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsAutomaticProduction.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\Barcode\clsBarcode.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\Barcode\clsBarcodeIM.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\Barcode\clsBarcodePrinting.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\ClsDepartment.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsDiscountonMaximumAmountPurchase.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\ClsDraftProcedureStages.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\ClsExpiryDate.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsGeneratePOfromPurchaseRequest.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsGRID.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsGRIDES.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsItemList.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsItemMasterUploadPreview.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\ClsListingItemsPR.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsListofBinDetails.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsListReport.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsLoadAgreementsList.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsLSIntegrationStatusScreen.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsMaterialInward.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsMIGenerationWizard.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsOutlets.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsPACPPriceChange.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsPaymentDetails.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsPDCPosting.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\ClsPettyCashMaster.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\ClsPOSBill.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\ClsPriceChangeRequest.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsPriceConfiguration.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsPriceUpdateBranchAuthorization.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsPriceUpdateItemGroupAuthorization.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsProductionGenerationWizard.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\ClsSalesBlanketAgreementMaster.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsSAPAlertWindow.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\ClsSearchAndFilter.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsStockcountwizardNew.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\ClsStockDetails.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\ClsSubGroup.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\ClsSubSubGroup.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\ClsSubSubSubGroup.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\ClsSupDeposit.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsSupplierrebate1.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\ClsSupplierRebateWizard.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\ClsUserCreditNote.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\ClsVIEWFORAPP.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\Cls_DocumentDraw.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\Cls_DocumentDrawWizard.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\Cls_GetDetails.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\Cls_ItemMasterDataUpload.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\Cls_ProductEnquiry.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\Configuration.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\dataHelper.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\EmailHistory.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\MessageConfiguration.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\MessengerConfiguration.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\PriceUpdateService.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\Promotions\clsPromotionOnVoucherPurchase.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\StockCount\clsBuyGetFreeItems.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\StockCount\clsItemWiseDiscount.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\StockCount\clsItemWiseDiscountOld.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\StockCount\ClsMultipleStockTransfer.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\StockCount\clsPDTStockCounting.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsPostMultipleAPCreditMemos.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsPostMultipleAPInvoices.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsPriceApprovalScreen.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsPriceUpdate.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsPurchaseHistoryDetails.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsSerialBatchDetails.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\StockCount\clsStockCountGenerationWizard.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsStockTransferDetails.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsStockTransferRequest.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsSubItemList.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsSupplierAgreement.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsSupplierAgreementPosting.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsSupplierRebate.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsVehicleMaster.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\clsWeighingScale.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\StockCount\clsPromotionOnBillTotal.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\StockCount\ClsWarehouse.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\Supplier Promotions\clsPromoCostReduction.vb" />
+    <Compile Include="4.BusinessClasses\04.Addon Forms\Supplier Promotions\ClsPromoReversion.vb" />
+    <Compile Include="4.BusinessClasses\Reports\ClsGRPODocWiseReport.vb" />
+    <Compile Include="4.BusinessClasses\Reports\Cls_AllItemsList.vb" />
+    <Compile Include="4.BusinessClasses\Reports\Cls_APInvoiceItem.vb" />
+    <Compile Include="4.BusinessClasses\Reports\Cls_ARInvoiceDoc.vb" />
+    <Compile Include="4.BusinessClasses\Reports\Cls_ARInvoiceItem.vb" />
+    <Compile Include="4.BusinessClasses\Reports\Cls_BarcodeCheck.vb" />
+    <Compile Include="4.BusinessClasses\Reports\Cls_CategoryInOB.vb" />
+    <Compile Include="4.BusinessClasses\Reports\Cls_ExciseItemsRp.vb" />
+    <Compile Include="4.BusinessClasses\Reports\Cls_GRPOItemWise.vb" />
+    <Compile Include="4.BusinessClasses\Reports\Cls_MainWHSE.vb" />
+    <Compile Include="4.BusinessClasses\Reports\Cls_OpenDispatch.vb" />
+    <Compile Include="4.BusinessClasses\Reports\Cls_StockCntSummary.vb" />
+    <Compile Include="4.BusinessClasses\Reports\Cls_StockWHSE.vb" />
+    <Compile Include="4.BusinessClasses\Reports\Cls_TransferReceiptRpt.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Retail.exe.config" />
+    <None Include="bin\Debug\Retail.vshost.exe.config" />
+    <None Include="bin\Debug\Retail.vshost.exe.manifest" />
+    <None Include="bin\x64\Template\2-SAP-NEW Item Master Upload Template.xlsx" />
+    <None Include="bin\x64\Template\MassUpdatePriceExcelUpload1.xlsx" />
+    <None Include="bin\x64\Template\PCRExcelUploadAllTabs.xlsx" />
+    <None Include="bin\x64\Template\POSBILL.xlsx" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Reports\TransferRequest.rpt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SQLQuery\TNX_SUPPLIER_REBATE_WIZARDLOADGRID.sql" />
+    <EmbeddedResource Include="SQLQuery\UPDATE_PRICECHANGES.sql" />
+    <EmbeddedResource Include="TransactionNotification\TNX_RETAIL_TN.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_OpenPurchaseRequestLines.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_VisaExpiryinnext90days.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_PurchaseOrderAddedAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_PassportExpiryinnext90days.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_SPP2LineNumber.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_SPP1LineNumber.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_UOMGroupBylinevalue.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_QIDExpiry.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_PassportExpiry.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_SalesReportforRectification.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_OpenPurchaseOrderLines.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_PromotionNearExpiryItems.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_UOMEntry.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_SPP2RowNumbers.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_SPP1RowNumbers.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_RecordsWithoutMobileNumber.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_UomPricesQuery.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_OutGoingPaymentAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_RSPPriceChangeQuery.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_SalesOderCreditLimitDeviation.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_POPricemorethanLastPurchaseprice.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_WarehousePOCreatedAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_VisaExpiryin60days.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_TomorrowDeliverysAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_SupplierRebateAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_SalesOrderAddedalert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_SalahuddinSTRAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_PurchaseRequestAddedAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_PassportExpiryin60days.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_STOCKBYWAREHOUSE.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_StockCuntingSummrytobeposted.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_TransferReceiptReport.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_OpenDispatchReport.sql" />
+    <EmbeddedResource Include="5.XML\ItemWiseDiscount.xml" />
+    <EmbeddedResource Include="5.XML\ExpiryDateScreen.xml" />
+    <EmbeddedResource Include="5.XML\UserCreditNote.xml" />
+    <EmbeddedResource Include="5.XML\DOCUMENTDRAW.xml" />
+    <EmbeddedResource Include="5.XML\PriceUpdate_1.xml" />
+    <EmbeddedResource Include="5.XML\ItemMasterDataNew.xml" />
+    <EmbeddedResource Include="5.XML\BillTotalNew.xml" />
+    <EmbeddedResource Include="5.XML\PromotionOnVoucherPurchase.xml" />
+    <EmbeddedResource Include="5.XML\ItemWiseDiscounts.xml" />
+    <EmbeddedResource Include="5.XML\BuyandGetLeastItems3.xml" />
+    <EmbeddedResource Include="5.XML\PromoCostReversion.xml" />
+    <EmbeddedResource Include="5.XML\Reduction3.xml" />
+    <EmbeddedResource Include="5.XML\GRPODocRep.xml" />
+    <EmbeddedResource Include="5.XML\AllItemsList.xml" />
+    <EmbeddedResource Include="5.XML\BarcodeCheck.xml" />
+    <EmbeddedResource Include="5.XML\GRPOItemRprt.xml" />
+    <EmbeddedResource Include="5.XML\StockCntSumm.xml" />
+    <EmbeddedResource Include="5.XML\MainWHSExpDT.xml" />
+    <EmbeddedResource Include="5.XML\OpenDISRprt.xml" />
+    <EmbeddedResource Include="5.XML\StockRpWHSE.xml" />
+    <EmbeddedResource Include="5.XML\ARInvoiceDoc.xml" />
+    <EmbeddedResource Include="5.XML\ARInvoiceItem.xml" />
+    <EmbeddedResource Include="5.XML\APInvoicesItem.xml" />
+    <EmbeddedResource Include="5.XML\CatWiseInOB.xml" />
+    <EmbeddedResource Include="5.XML\ExciseItemsRp.xml" />
+    <EmbeddedResource Include="5.XML\BRAND.xml" />
+    <EmbeddedResource Include="5.XML\Department.xml" />
+    <EmbeddedResource Include="5.XML\EmailLog.xml" />
+    <EmbeddedResource Include="5.XML\MessageConfigurations.xml" />
+    <EmbeddedResource Include="5.XML\SMS_Email_Configuration.xml" />
+    <EmbeddedResource Include="5.XML\Configurations.xml" />
+    <EmbeddedResource Include="5.XML\ListReport.xml" />
+    <EmbeddedResource Include="5.XML\CategorySplitScreen.xml" />
+    <EmbeddedResource Include="5.XML\Approval1.xml" />
+    <EmbeddedResource Include="5.XML\ApprovalD.xml" />
+    <EmbeddedResource Include="5.XML\Approvalstages.xml" />
+    <EmbeddedResource Include="5.XML\ApprovalTemplates.xml" />
+    <EmbeddedResource Include="5.XML\DraftStage.xml" />
+    <EmbeddedResource Include="5.XML\BarCodereq.xml" />
+    <EmbeddedResource Include="5.XML\CentralizedPriceChangeRequest.xml" />
+    <EmbeddedResource Include="5.XML\grid.xml" />
+    <EmbeddedResource Include="5.XML\StockDetails.xml" />
+    <EmbeddedResource Include="5.XML\AutomaticMultipleSTR.xml" />
+    <EmbeddedResource Include="5.XML\BarCodeGrid.xml" />
+    <Content Include="5.XML\BarcodeRequest.xml" />
+    <EmbeddedResource Include="5.XML\ItemMasterBarcode.xml" />
+    <EmbeddedResource Include="5.XML\GetBarcode.xml" />
+    <EmbeddedResource Include="5.XML\FlyerSort.xml" />
+    <EmbeddedResource Include="5.XML\BranchMaster.xml" />
+    <EmbeddedResource Include="5.XML\POSBill.xml" />
+    <EmbeddedResource Include="5.XML\DOCUMENTDRAW_ITM.xml" />
+    <EmbeddedResource Include="5.XML\ProductEnquiry1.xml" />
+    <EmbeddedResource Include="5.XML\IMPUploadPreview.xml" />
+    <EmbeddedResource Include="5.XML\PACPPriceChange.xml" />
+    <EmbeddedResource Include="5.XML\SalesBlanketAgreementMaster.xml" />
+    <EmbeddedResource Include="5.XML\PriceChangeRequestNew1.xml" />
+    <EmbeddedResource Include="5.XML\PettyCashTypeMaster.xml" />
+    <Content Include="5.XML\Stockwz1.xml" />
+    <EmbeddedResource Include="5.XML\TransferRepRp.xml" />
+    <EmbeddedResource Include="5.XML\SubGroup.xml" />
+    <EmbeddedResource Include="5.XML\SubSubGroup.xml" />
+    <EmbeddedResource Include="5.XML\SubSubSubGroup.xml" />
+    <EmbeddedResource Include="5.XML\VIEWW.xml" />
+    <EmbeddedResource Include="5.XML\TESTRebate.xml" />
+    <EmbeddedResource Include="5.XML\SupplierRebateWizard.xml" />
+    <EmbeddedResource Include="5.XML\warehouses.xml" />
+    <Content Include="5.XML\XMLFile1.xml" />
+    <Content Include="bin\Debug\Menu.xml" />
+    <EmbeddedResource Include="SQLQuery\Barcode_ItemName.sql" />
+    <Content Include="bin\Debug\Retail.png" />
+    <Content Include="bin\x64\Debug\ErrorLog\ItemCreation_20260127\15_32_44.txt" />
+    <Content Include="bin\x64\Debug\ErrorLog\ItemCreation_20260130\14_05_58.txt" />
+    <Content Include="bin\x64\Debug\ErrorLog\ItemCreation_20260130\14_29_19.txt" />
+    <Content Include="bin\x64\Debug\ErrorLog\ItemCreation_20260130\14_41_25.txt" />
+    <Content Include="bin\x64\Debug\ErrorLog\ItemCreation_20260130\15_07_45.txt" />
+    <Content Include="bin\x64\Debug\ErrorLog\ItemCreation_20260130\15_12_07.txt" />
+    <Content Include="bin\x64\Debug\ErrorLog\ItemCreation_20260130\15_26_21.txt" />
+    <Content Include="bin\x64\Debug\ErrorLog\ItemCreation_20260130\15_37_26.txt" />
+    <Content Include="bin\x64\Debug\ErrorLog\ItemCreation_20260130\15_44_49.txt" />
+    <Content Include="bin\x64\Debug\ErrorLog\ItemCreation_20260130\15_55_36.txt" />
+    <Content Include="bin\x64\Debug\ErrorLog\ItemCreation_20260130\16_17_22.txt" />
+    <Content Include="bin\x64\Debug\ErrorLog\ItemCreation_20260130\16_32_59.txt" />
+    <Content Include="bin\x64\Debug\ErrorLog\ItemCreation_20260130\16_39_33.txt" />
+    <Content Include="bin\x64\Debug\ErrorLog\ItemCreation_20260130\16_54_29.txt" />
+    <Content Include="bin\x64\Debug\ErrorLog\ItemCreation_20260130\17_01_28.txt" />
+    <Content Include="bin\x64\Debug\ErrorLog\ItemCreation_20260130\17_03_49.txt" />
+    <Content Include="bin\x64\Debug\ErrorLog\ItemCreation_20260202\13_29_29.txt" />
+    <Content Include="bin\x64\Debug\ErrorLog\ItemCreation_20260210\15_54_49.txt" />
+    <Content Include="bin\x64\Debug\ErrorLog\ItemCreation_20260228\13_39_33.txt" />
+    <Content Include="bin\x64\Debug\ErrorLog\ItemCreation_20260305\09_44_02.txt" />
+    <Content Include="bin\x64\Debug\Menu.xml" />
+    <EmbeddedResource Include="SQLQuery\Barcode_Price.sql" />
+    <EmbeddedResource Include="SQLQuery\Barcode_Vat.sql" />
+    <EmbeddedResource Include="SQLQuery\Barcode_WithouthVatPrice.sql" />
+    <Content Include="bin\x64\Debug\ReadMe.txt" />
+    <Content Include="bin\x64\Debug\Retail.png" />
+    <Content Include="bin\x64\Debug\Type1.txt" />
+    <EmbeddedResource Include="SQLQuery\Barcode_ItemNameMadhu.sql" />
+    <EmbeddedResource Include="SQLQuery\Barcode_PriceMadhu.sql" />
+    <Content Include="bin\x64\Debug\Type1backup.txt" />
+    <Content Include="bin\x64\Debug\Type1old.txt" />
+    <Content Include="bin\x64\Debug\Type2.txt" />
+    <Content Include="bin\x64\Debug\Type3.txt" />
+    <EmbeddedResource Include="SQLQuery\Check_GRPO_Price_Fluctuation.sql" />
+    <EmbeddedResource Include="SQLQuery\Check_GR_Price_Fluctuation.sql" />
+    <EmbeddedResource Include="SQLQuery\Check_GRPO_Price_Fluctuation_APCredit.sql" />
+    <EmbeddedResource Include="SQLQuery\Barcode_WithoutVatPrice.sql" />
+    <EmbeddedResource Include="SQLQuery\Check_Receipt_Price_Fluctuation.sql" />
+    <Content Include="SQLQuery\EAN13_Check_Digit_Calculation.sql" />
+    <EmbeddedResource Include="SQLQuery\GET_RSP.sql" />
+    <EmbeddedResource Include="SQLQuery\GET_COST.sql" />
+    <EmbeddedResource Include="SQLQuery\GetRetailPrice.sql" />
+    <EmbeddedResource Include="SQLQuery\GetItemPrice.sql" />
+    <EmbeddedResource Include="SQLQuery\offerprice.sql" />
+    <EmbeddedResource Include="SQLQuery\GetDetails.sql" />
+    <EmbeddedResource Include="SQLQuery\GET_ITEM_PRICING_DETAILS.sql" />
+    <EmbeddedResource Include="SQLQuery\GET_HOLDING_DAYS.sql" />
+    <EmbeddedResource Include="SQLQuery\GET_ITEM_PRICE_DETAILS.sql" />
+    <Content Include="SQLQuery\PriceList_TextFile_Generation.sql" />
+    <EmbeddedResource Include="SQLQuery\PriceList_TextFile_Generation_20251017.sql" />
+    <Content Include="SQLQuery\SBO_AVERAGESALE VIEW.SQL" />
+    <EmbeddedResource Include="SQLQuery\SBO_AverageSale.sql" />
+    <Content Include="SQLQuery\SBO_GetMIUser.sql" />
+    <EmbeddedResource Include="SQLQuery\SBO_LOADSTOCK.sql" />
+    <EmbeddedResource Include="SQLQuery\SBO_GET_TNX_ITEM_MASTER_UPLOAD.sql" />
+    <Content Include="SQLQuery\SBO_ProcessBarCode.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_AllItemsList.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_AlBadaaSTRAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_AlMuraqabat1STRAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_AlMuraqabat2STRAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_AlMuraqabat3STRAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_AlRigga1STRAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_AlRigga2STRAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_AlRigga3STRAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_AlRigga4STRAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TENX_MESSENGER_MAIN.sql" />
+    <EmbeddedResource Include="SQLQuery\TENX_MESSENGER_EMAIL_HISTORY.sql" />
+    <EmbeddedResource Include="SQLQuery\SP_SBO_APCM_ALERT.sql" />
+    <EmbeddedResource Include="SQLQuery\SP_TNX_PRICE_UPDATE.sql" />
+    <EmbeddedResource Include="SQLQuery\SBO_SP_PostTransactionNotice.sql" />
+    <EmbeddedResource Include="SQLQuery\SBO_RebateAmount.sql" />
+    <Content Include="SQLQuery\TNX_APInvoiceAllocation.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_BarcodeCheck.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_GRPODocumentWiseReport.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_GRPOItemWiseReport.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_MainWHSNearExpiryDtStock.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_APInvoicesItemWiseReport.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_CategorywiseInventoryOB.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_ExciseItemsReportforRebate.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_ARInvoiceDocWiseReport.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_ARInvoiceItemWiseReport.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_BFHExpiryin60days.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_BelowcostpriceinGRPO.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_ChequeAlertonduedate.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_Diyafah1STRAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_Diyafah2STRAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_EmiratesIDExpiresin60Days.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_InsuranceExpiryin60days.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_MainWarehouseSTRAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_MinimumQtyAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_OHCExpiryin60days.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_GoodsIssueApproval.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_ItemquantitydeviatesfromMaximumQty.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_BTFAlertHO.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_ExchangeAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_CreditLimitExceededVendors.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_Approvalgreaterthan2000.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_JEforInventoryGL.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_JEforNonInventoryGL.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_JournalVoucherApprovalV.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_FutureandBackDatedEntriesAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_ccolinenumbers.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_ITM2VendorRowNumbers.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_MinimumQuantityAlert_New.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_MinimumQuantityAlert_New_V1.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_ContractExpiry.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_Birthday.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_MedicalCardExpiry.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_GoodsissuepostedwithoutMI.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_LOCKEDUSER.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_BackdateGRPO.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_BelowCostGRPOAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_MissingAttachmentsinBP.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_BelowCostGRPOAdded.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_BelowCostPOAdded.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_EmiratesIDExpiryinnext90days.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_GoodsReceiptNoteAddedAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_GoodsReceiptNote_ElectraAddedAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_GoodsReceiptNote_KHDAddedAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_GoodsReceiptNote_TCAAddedAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_GoodsReceiptNote_WarehouseAddedAlert.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_InsuranceExpiryinnext90days.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_LabourCardExpiryinnext90days.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_LicenseExpiryinnext90days.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_Morethansetupbarcodes.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_Numberingseries.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_ApprovalStatusDetailReport.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_ApprovalStatusReport.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_ITEMDETAILS_NEW.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_LOAD_CENTRAL_PCR.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_BULKPRICEUPDATE.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_LASTGRPO_PRICE.sql" />
+    <EmbeddedResource Include="SQLQuery\TNX_ITEMLLIST.sql" />
+    <Content Include="SQLQuery\TNX_GETITEMPRICE.sql" />
+    <Content Include="SQLQuery\TNX_OPBranchJEAllocation.sql" />
+    <EmbeddedResource Include="5.XML\ItemListPR.xml" />
+    <EmbeddedResource Include="5.XML\Stockwz.xml" />
+    <EmbeddedResource Include="5.XML\SupplierDeposit.xml" />
+    <EmbeddedResource Include="5.XML\SearchAndFilter.xml" />
+    <Content Include="5.XML\Menu_11.xml" />
+    <EmbeddedResource Include="5.XML\WeighingScaleTextfileGen.xml" />
+    <EmbeddedResource Include="5.XML\ClearanceSales.xml" />
+    <EmbeddedResource Include="5.XML\StockTransferDetails.xml" />
+    <EmbeddedResource Include="5.XML\SupplierAgreementPosting.xml" />
+    <EmbeddedResource Include="5.XML\VehicleMaster.xml" />
+    <EmbeddedResource Include="5.XML\PDTStockCounting.xml" />
+    <EmbeddedResource Include="5.XML\MIGenerationWizard.xml" />
+    <EmbeddedResource Include="5.XML\PaymentDetailsScreen.xml" />
+    <EmbeddedResource Include="5.XML\StockCountGenerationWizard.xml" />
+    <EmbeddedResource Include="5.XML\LSIntegrationStatusScreen.xml" />
+    <EmbeddedResource Include="5.XML\ProductionGenerationWizard.xml" />
+    <EmbeddedResource Include="5.XML\PriceUpdateBranchAuthorization.xml" />
+    <EmbeddedResource Include="5.XML\PriceUpdateItemGroupAuthorization.xml" />
+    <EmbeddedResource Include="5.XML\AddonConfiguration1.xml" />
+    <EmbeddedResource Include="5.XML\MaterialInwardGI.xml" />
+    <EmbeddedResource Include="5.XML\FuturePriceUpdate.xml" />
+    <EmbeddedResource Include="5.XML\BuyandGetFreeItems.xml" />
+    <EmbeddedResource Include="5.XML\BuyAndGetLeastItem.xml" />
+    <EmbeddedResource Include="5.XML\BuyNGetOneFreeItem.xml" />
+    <EmbeddedResource Include="5.XML\DiscountonMaximumAmountPurchase.xml" />
+    <EmbeddedResource Include="5.XML\ItemWiseDiscountOld.xml" />
+    <EmbeddedResource Include="5.XML\InventoryTransferRequest.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5.XML\StockTransferRequest.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5.XML\StockTransferRequest1.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5.XML\MaterialInward1.xml" />
+    <EmbeddedResource Include="5.XML\MaterialInwardGI1.xml" />
+    <EmbeddedResource Include="5.XML\MaterialInwardGI2.xml" />
+    <EmbeddedResource Include="5.XML\SupplierRebateNew.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5.XML\SupplierRebateNew1.xml" />
+    <EmbeddedResource Include="5.XML\PriceConfiguration.xml" />
+    <EmbeddedResource Include="5.XML\PriceConfigurtion1.xml" />
+    <EmbeddedResource Include="5.XML\BulkPurchaseOrderWizard.xml" />
+    <EmbeddedResource Include="5.XML\ItemListingNew.xml" />
+    <EmbeddedResource Include="5.XML\ItemlistNew.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5.XML\OutletForm.xml" />
+    <EmbeddedResource Include="5.XML\PromotiononBillTotal.xml" />
+    <EmbeddedResource Include="5.XML\AddonConfiguration.xml" />
+    <EmbeddedResource Include="5.XML\GeneratePOFromPurchaseRequest.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5.XML\ListofBinDetails.xml" />
+    <EmbeddedResource Include="5.XML\LoadAgreementsList.xml" />
+    <EmbeddedResource Include="5.XML\MaterialInward.xml" />
+    <EmbeddedResource Include="5.XML\PostMultipleAPCreditMemos.xml" />
+    <EmbeddedResource Include="5.XML\PostMultipleAPInvoices.xml" />
+    <EmbeddedResource Include="5.XML\PurchaseHistoryDetails.xml" />
+    <EmbeddedResource Include="5.XML\PurchaseRequestDetails.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5.XML\SerialBatchDetails.xml" />
+    <EmbeddedResource Include="5.XML\SupplierAgreement.xml" />
+    <EmbeddedResource Include="5.XML\AutomaticProduction.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5.XML\ItemsList.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5.XML\SubItemsList.xml" />
+    <EmbeddedResource Include="5.XML\PriceUpdate.xml" />
+    <EmbeddedResource Include="5.XML\PriceApprovalScreen.xml" />
+    <EmbeddedResource Include="5.XML\PDCPosting.xml" />
+    <EmbeddedResource Include="5.XML\BarcodeIM.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5.XML\BarcodePrinting.xml" />
+    <EmbeddedResource Include="5.XML\Barcode.xml" />
+    <EmbeddedResource Include="5.XML\BarcodeMaterialInwards.xml" />
+    <Content Include="bin\Debug\Retail.vshost.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="4.BusinessClasses\LICENCE\" />
+    <Folder Include="6.CrystalReports\Forms\" />
+    <Folder Include="6.CrystalReports\ReportClasses\" />
+    <Folder Include="6.CrystalReports\Reports\" />
+    <Folder Include="6.CrystalReports\XSD\" />
+    <Folder Include="bin\x64\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SAPbobsCOM">
+      <Guid>{FC8030BE-F5D2-4B8E-8F92-44228FE30100}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SAPbouiCOM">
+      <Guid>{6048236A-956D-498D-A6F1-9C81C13AB6E8}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="TaskScheduler">
+      <Guid>{E34CB9F1-C7F7-424C-BE29-027DCC09363A}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Win32_TPMLib">
+      <Guid>{61E207A5-827C-42E9-ADFA-165C6A745EE4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

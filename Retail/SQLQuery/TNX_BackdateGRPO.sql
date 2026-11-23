@@ -1,0 +1,1 @@
+SELECT 'GRPO' as "Type",T0."DocNum", T0."DocDate",T0."CreateDate" , T0."CardCode", T0."CardName", T0."NumAtCard", T0."DocTotal", T1."U_NAME" as "Created By", T0."BPLId", T0."U_PDTUSERNAME", T0."Comments" FROM OPDN T0   INNER JOIN OUSR T1 ON T0."UserSign" = T1."USERID" WHERE T0."DocDate" <>CURRENT_DATE and  T0."CreateDate" =CURRENT_DATE and  T0."CANCELED" ='N'

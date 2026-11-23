@@ -1,0 +1,1 @@
+SELECT T0."DocEntry", T0."DocNum", T0."DocDate",T0."CreateDate",  T0."CardCode", T0."CardName",  T0."BPLName",T0."DocTotal", T0."Comments" FROM OPDN T0 WHERE T0."CANCELED" ='N' and T0."UpdateDate"=CURRENT_DATE and LEFT(LPAD(T0."UpdateTS",6,'0'),4)>=TO_CHAR(ADD_SECONDS(CURRENT_TIMESTAMP,-300), 'HH24MI') and T0."BPLId"='4'

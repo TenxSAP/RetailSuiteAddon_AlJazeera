@@ -1,0 +1,1 @@
+SELECT DISTINCT 'TRUE' FROM DUMMY  WHERE $[OIGE."U_TYPE".0]  IN ('Damage','Adjustment')

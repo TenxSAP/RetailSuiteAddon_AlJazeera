@@ -1,0 +1,1 @@
+Select * From(SELECT T0."CardCode", T0."CardName", T0."CreditLine"*-1 as "CreditLimit", (T0."Balance"+ T0."DNotesBal") as "UtilizedBalance",((T0."Balance"+ T0."DNotesBal")/T0."CreditLine"*-1) * 100 AS "Utilized%" FROM OCRD T0 WHERE T0."CardType"='S' and T0."CreditLine"<>'0' )A   Where A."Utilized%">'95'

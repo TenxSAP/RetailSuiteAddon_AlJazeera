@@ -1,0 +1,1 @@
+SELECT T0."DocNum" as "PO No.", T0."DocDate", T0."DocDueDate",T0."BPLName" , T0."NumAtCard", T0."DocTotal", T0."Comments" FROM "OPOR"  T0 WHERE T0."CardCode" ='V00294' AND T0."CreateDate"=CURRENT_DATE  and  LEFT(LPAD(T0."CreateTS",6,'0'),4)>=TO_CHAR(ADD_SECONDS(CURRENT_TIMESTAMP,-120), 'HH24MI')

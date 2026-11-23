@@ -1,0 +1,1 @@
+SELECT T2."U_NAME", T0."TransId", T0."RefDate", T1."Account",T3."AcctName",  T1."Debit", T1."Credit" FROM OJDT T0  INNER JOIN JDT1 T1 ON T0."TransId" = T1."TransId" inner join OUSR T2 on T0."UserSign"=T2."USERID" INNER JOIN OACT T3 ON T1."Account" = T3."AcctCode" WHERE T0."RefDate" =CURRENT_DATE and  T1."Account" not in ('102020101','501030101') and  T0."TransType" ='30'

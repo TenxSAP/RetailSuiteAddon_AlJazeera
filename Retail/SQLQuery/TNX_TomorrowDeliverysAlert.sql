@@ -1,0 +1,1 @@
+SELECT T0."DocNum" as "SO No.",   T0."DocDate",T1."ShipDate" as "Delivery Date",    T0."CardCode",   T0."CardName",   T0."NumAtCard",   T0."DocTotal", T1."ItemCode", T1."Dscription", T1."Quantity",T1."OpenQty",T1."LineTotal" FROM ORDR T0 INNER JOIN RDR1 T1 on T0."DocEntry"=T1."DocEntry" WHERE DAYS_BETWEEN(CURRENT_DATE,T1."ShipDate")=1

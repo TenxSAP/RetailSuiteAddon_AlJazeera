@@ -1,0 +1,1 @@
+SELECT T1."DocEntry", T0."DocNum", T0."DocDate",T1."LineNum" as "LineNum",  T1."LineStatus" FROM OPOR T0  INNER JOIN POR1 T1 ON T0."DocEntry" = T1."DocEntry" WHERE T1."LineStatus" ='O' and   T0."DocDate" >=[%0] and  T0."DocDate" <=[%1]

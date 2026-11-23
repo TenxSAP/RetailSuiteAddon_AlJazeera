@@ -1,0 +1,40 @@
+CREATE PROCEDURE "TNX_MainWHSNearExpiryDtStock"()
+As
+Begin
+
+SELECT A."ItemCode",T."ItemName",A."Expiry Date",SUM(A."Quantity") as"Quantity" FROM
+(SELECT T0."U_DOCTY", T0."U_BENTRY", T0."U_BNO", T0."U_DOCDT", T0."U_GUID", T1."U_ITMCD" as "ItemCode", T1."U_EDATE" as "Expiry Date", 
+(CASE WHEN T0."U_DOCTY"='ORIN' then T2."CANCELED"
+WHEN T0."U_DOCTY"='ORPC' then T3."CANCELED"
+WHEN T0."U_DOCTY"='OINV' then T4."CANCELED"
+WHEN T0."U_DOCTY"='ORPD' then T6."CANCELED"
+WHEN T0."U_DOCTY"='ODLN' then T5."CANCELED"
+WHEN T0."U_DOCTY"='OPDN' then T7."CANCELED"
+WHEN T0."U_DOCTY"='ORDN' then T8."CANCELED"
+WHEN T0."U_DOCTY"='OIGN' then 'N'
+WHEN T0."U_DOCTY"='OIGE' then 'N'
+ELSE '' END) as "CANCELLED",
+
+(CASE WHEN T0."U_DOCTY"='OIGN' then T1."U_QTY"
+WHEN T0."U_DOCTY"='ORIN' then T1."U_QTY"
+WHEN T0."U_DOCTY"='ORPC' then -T1."U_QTY"
+WHEN T0."U_DOCTY"='OINV' then -T1."U_QTY"
+WHEN T0."U_DOCTY"='OIGE' then -T1."U_QTY"
+WHEN T0."U_DOCTY"='ORPD' then -T1."U_QTY"
+WHEN T0."U_DOCTY"='ODLN' then -T1."U_QTY"
+WHEN T0."U_DOCTY"='OPDN' then T1."U_QTY"
+WHEN T0."U_DOCTY"='ORDN' then T1."U_QTY" 
+ELSE T1."U_QTY" END) as "Quantity"
+
+FROM "@TNXEDS"  T0 inner join "@TNXEDSC0"  T1 on T0."DocEntry"=T1."DocEntry"
+LEFT JOIN ORIN T2 on TO_CHAR(T2."DocEntry")=T0."U_BENTRY" and T0."U_DOCTY"='ORIN'
+LEFT JOIN ORPC T3 on TO_CHAR(T3."DocEntry")=T0."U_BENTRY" and T0."U_DOCTY"='ORPC'
+LEFT JOIN OINV T4 on TO_CHAR(T4."DocEntry")=T0."U_BENTRY" and T0."U_DOCTY"='OINV'
+LEFT JOIN ODLN T5 on TO_CHAR(T5."DocEntry")=T0."U_BENTRY" and T0."U_DOCTY"='ODLN'
+LEFT JOIN ORPD T6 on TO_CHAR(T6."DocEntry")=T0."U_BENTRY" and T0."U_DOCTY"='ORPD'
+LEFT JOIN OPDN T7 on TO_CHAR(T7."DocEntry")=T0."U_BENTRY" and T0."U_DOCTY"='OPDN'
+LEFT JOIN ORDN T8 on TO_CHAR(T8."DocEntry")=T0."U_BENTRY" and T0."U_DOCTY"='ORDN')A 
+LEFT JOIN OITM T on T."ItemCode"=A."ItemCode"
+Where A."CANCELLED"='N' 
+GROUP BY A."ItemCode",T."ItemName",A."Expiry Date";
+END;

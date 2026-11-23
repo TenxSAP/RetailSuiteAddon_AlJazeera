@@ -1,0 +1,1 @@
+SELECT T0."ItemCode", T0."ItemName", T1."UomEntry",T1."Price",T0."validFor" FROM OITM T0  INNER JOIN ITM9 T1 ON T0."ItemCode" = T1."ItemCode" WHERE T1."PriceList" ='4' and  T0."ItemType" <>'F' and T0."validFor"='Y' --(select Count("ItemCode") from ITM9 where "ItemCode"=T0."ItemCode" ) as "Count",

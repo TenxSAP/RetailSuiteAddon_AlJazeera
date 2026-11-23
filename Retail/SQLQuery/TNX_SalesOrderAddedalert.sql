@@ -1,0 +1,1 @@
+SELECT   T0."DocNum" as "SO No.",   T0."DocDate",   T0."CardCode",   T0."CardName",   T0."NumAtCard",   T0."DocTotal"  FROM ORDR T0  WHERE T0."CreateDate"=CURRENT_DATE  and  LEFT(LPAD(T0."CreateTS",6,'0'),4)>=TO_CHAR(ADD_SECONDS(CURRENT_TIMESTAMP,-120), 'HH24MI')

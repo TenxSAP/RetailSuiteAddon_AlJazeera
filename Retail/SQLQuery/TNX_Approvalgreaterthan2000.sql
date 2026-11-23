@@ -1,0 +1,1 @@
+Select distinct 'True' from OPOR a inner join POR1 b on a."DocEntry"=b."DocEntry" where $[OPOR.DocTotal.Number]>'2000' and (Select "ItmsGrpCod" from OITM where "ItemCode"= $[POR1.ItemCode.0]) <> '116'

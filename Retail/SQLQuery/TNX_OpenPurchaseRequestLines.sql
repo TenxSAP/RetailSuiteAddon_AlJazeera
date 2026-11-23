@@ -1,0 +1,1 @@
+SELECT T1."DocEntry", T0."DocNum", T0."DocDate",T1."LineNum"-1 as "LineNum",  T1."LineStatus" FROM OPRQ T0  INNER JOIN PRQ1 T1 ON T0."DocEntry" = T1."DocEntry" WHERE T1."LineStatus" ='O' and   T0."DocDate" >=[%0] and  T0."DocDate" <=[%1]

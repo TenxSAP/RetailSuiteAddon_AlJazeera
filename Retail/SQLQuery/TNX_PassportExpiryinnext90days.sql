@@ -1,0 +1,1 @@
+SELECT T0."empID",T0."ExtEmpNo",T0."lastName",T0."firstName",(Select "Name" from OUDP where "Code"=T0."dept") as "Department",T0."passportNo", T0."passportEx",DAYS_BETWEEN(CURRENT_DATE,T0."passportEx") as "DaysToExpiry" from OHEM T0  where DAYS_BETWEEN(CURRENT_DATE,T0."passportEx") between 0 and 30 and T0."Active"='Y' --and T0."status"=1

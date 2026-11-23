@@ -1,0 +1,1 @@
+SELECT T0."Locked", T0."USER_CODE", T0."U_NAME" FROM OUSR T0 WHERE T0."Locked" ='Y'
